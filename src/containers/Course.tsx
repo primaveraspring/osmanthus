@@ -14,7 +14,7 @@ function renderUnit(unit: UnitType | undefined) {
 
 function renderUnitLink(unit: UnitType) {
   return (
-    <div key={unit.id}>
+    <div key={`unit-link-${unit.id}`}>
       <Link to={unit.id}>{unit.name}</Link>
     </div>
   );

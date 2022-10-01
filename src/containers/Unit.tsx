@@ -5,17 +5,19 @@ type UnitProps = {
   unit: UnitType;
 };
 
-function renderVocabRows(vocabList: VocabListType) {
+function renderVocabRows(vocabList: VocabListType, unitId: string) {
   if (vocabList.length < 1) {
     return null;
   }
 
-  return vocabList.map((vocabEntry: VocabEntryType) => renderVocab(vocabEntry));
+  return vocabList.map((vocabEntry: VocabEntryType, index) =>
+    renderVocab(vocabEntry, unitId, index)
+  );
 }
 
-function renderVocab(vocab: VocabEntryType) {
+function renderVocab(vocab: VocabEntryType, unitId: string, index: number) {
   return (
-    <tr>
+    <tr key={`${unitId}-vocab-${index}`}>
       <td>{vocab.kana}</td>
       <td>{vocab.meaning}</td>
     </tr>
@@ -31,7 +33,7 @@ function Unit({ unit }: UnitProps) {
           <th>Kana</th>
           <th>Meaning</th>
         </tr>
-        {renderVocabRows(unit.vocab)}
+        {renderVocabRows(unit.vocab, unit.id)}
       </table>
     </div>
   );
