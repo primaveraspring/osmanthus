@@ -38,6 +38,9 @@ function Course() {
   const unit = unitId ? course.units[unitId] : undefined;
   return (
     <div>
+      <div>
+        <Link to="/">Home</Link>
+      </div>
       <h2>{course.name}</h2>
       <div>{renderUnitList(course)}</div>
       <div>{renderUnit(unit as UnitType)}</div>
