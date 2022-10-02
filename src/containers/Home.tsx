@@ -17,7 +17,8 @@ function Home() {
   return (
     <div className="App">
       <h1>Sudachi</h1>
-      <div className="card">{renderCourseLinks()}</div>
+      <h4>Select a Course</h4>
+      <div>{renderCourseLinks()}</div>
     </div>
   );
 }

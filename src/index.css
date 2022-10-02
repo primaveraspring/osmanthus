@@ -39,7 +39,7 @@ h1 {
 
 button {
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 1px solid #1832dd;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
@@ -47,6 +47,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
+  color:#1832dd
 }
 button:hover {
   border-color: #646cff;
@@ -67,4 +68,19 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.with-sidebar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  flex-basis: 20rem;
+  flex-grow: 1;
+}
+
+.not-sidebar {
+  flex-basis: 0;
+  flex-grow: 999;
 }

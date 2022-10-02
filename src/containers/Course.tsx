@@ -43,12 +43,13 @@ function Course() {
   return (
     <div>
       <div>
-        <Link to="/">Home</Link>
+        <div>
+          <Link to="/">Home</Link>
+        </div>
+        <h2>{course ? course.name : ''}</h2>
+        <div>{renderUnitList(course as any)}</div>
       </div>
-      <h2>{course ? course.name : ''}</h2>
-      <div>{renderUnitList(course as any)}</div>
       <div>{renderUnit(unit as any)}</div>
-      {<Outlet />}
     </div>
   );
 }
