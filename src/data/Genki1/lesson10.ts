@@ -220,5 +220,5 @@ export default {
   name: 'Lesson 10',
   id: 'lesson10',
   vocab,
-  headers: { kana: 'Kana', meaning: 'Meaning', kanji: 'Kanji' },
+  headers: { kana: 'Kana', kanji: 'Kanji', meaning: 'Meaning' },
 };

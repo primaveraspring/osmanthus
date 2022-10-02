@@ -90,3 +90,7 @@ button:focus-visible {
 .not-sidebar table {
   margin: 0 auto;
 }
+
+.not-sidebar table th {
+  text-align: center
+}
