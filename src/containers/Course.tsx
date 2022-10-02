@@ -5,6 +5,7 @@ import AllCourses from '../data/AllCourses';
 import Unit from './Unit';
 import { Navigation } from 'baseui/side-navigation';
 import { useNavigate } from 'react-router-dom';
+import { StyledLink } from 'baseui/link';
 
 function renderNav(course: CourseType, unit: UnitType | undefined) {
   let navigate = useNavigate();
@@ -42,7 +43,9 @@ function Course() {
     <div className="with-sidebar">
       <div className="sidebar">
         <div>
-          <Link to="/">Home</Link>
+          <StyledLink $as={Link} to="/">
+            Home
+          </StyledLink>
         </div>
         <h2>{course ? course.name : ''}</h2>
         <div>{renderNav(course as any, unit)}</div>

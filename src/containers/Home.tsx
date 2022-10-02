@@ -1,12 +1,15 @@
 import { Link } from 'react-router-dom';
 import AllCourses from '../data/AllCourses';
+import { StyledLink } from 'baseui/link';
 
 function renderCourseLinks() {
   const courses = Object.values(AllCourses);
   return courses.map((course, index) => {
     return (
       <span key={`course-${course.id}`}>
-        <Link to={`/${course.id}`}>{course.name}</Link>
+        <StyledLink $as={Link} to={`/${course.id}`}>
+          {course.name}
+        </StyledLink>
         {index < courses.length - 1 ? ' | ' : null}
       </span>
     );
