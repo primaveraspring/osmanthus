@@ -31,8 +31,12 @@ function renderVocab(
 ) {
   return (
     <tr key={`${unitId}-vocab-${index}`}>
-      {Object.keys(headers).map((headerId: string) => {
-        return <td>{vocab[headerId] || ''}</td>;
+      {Object.keys(headers).map((headerId: string, index) => {
+        return (
+          <td key={`${unitId}-${headerId || ''}-vocab-${index}`}>
+            {vocab[headerId] || ''}
+          </td>
+        );
       })}
     </tr>
   );

@@ -9,7 +9,7 @@ export type CourseKeyType = keyof {
 };
 
 export type CourseType = {
-  id: string;
+  id: CourseKeyType;
   name: string;
-  units: { [unitId in CourseKeyType]: UnitType };
+  units: { string: UnitType };
 };

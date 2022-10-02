@@ -8,18 +8,28 @@ import {
 import Home from '../containers/Home';
 import Course from '../containers/Course';
 
-export default function AppRouter(children: any) {
+import { Client as Styletron } from 'styletron-engine-atomic';
+import { Provider as StyletronProvider } from 'styletron-react';
+import { LightTheme, BaseProvider, styled } from 'baseui';
+
+const engine = new Styletron();
+
+export default function AppRouter() {
   return (
-    <Router>
-      <div>
-        <Outlet />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/:course" element={<Course />}>
-            <Route path="/:course/:unit" />
-          </Route>
-        </Routes>
-      </div>
-    </Router>
+    <StyletronProvider value={engine}>
+      <BaseProvider theme={LightTheme}>
+        <Router>
+          <div>
+            <Outlet />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/:course" element={<Course />}>
+                <Route path="/:course/:unit" />
+              </Route>
+            </Routes>
+          </div>
+        </Router>
+      </BaseProvider>
+    </StyletronProvider>
   );
 }

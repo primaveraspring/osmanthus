@@ -15,7 +15,7 @@ function renderCourseLinks() {
 
 function Home() {
   return (
-    <div className="App">
+    <div className="home">
       <h1>Sudachi</h1>
       <h4>Select a Course</h4>
       <div>{renderCourseLinks()}</div>
