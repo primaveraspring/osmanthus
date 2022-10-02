@@ -1,4 +1,4 @@
-import { JAPANESE_FOR_BUSY_PEOPLE_1 } from '../types/Courses';
+import { JAPANESE_FOR_BUSY_PEOPLE_1, CourseType } from '../types/Courses';
 import unit1 from './unit1';
 import unit2 from './unit2';
 import unit3 from './unit3';

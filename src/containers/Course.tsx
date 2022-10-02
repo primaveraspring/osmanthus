@@ -20,7 +20,11 @@ function renderUnitLink(unit: UnitType) {
   );
 }
 
-function renderUnitList(course: CourseType) {
+function renderUnitList(course: CourseType | undefined) {
+  if (!course) {
+    return null;
+  }
+
   return (
     <div>
       {Object.values(course.units).map((unit: UnitType) =>
@@ -32,18 +36,18 @@ function renderUnitList(course: CourseType) {
 
 function Course() {
   const courseId = useParams().course as CourseKeyType;
-  const course = AllCourses[courseId];
+  const course = AllCourses[courseId] ? AllCourses[courseId] : undefined;
 
   const unitId = useParams().unit;
-  const unit = unitId ? course.units[unitId] : undefined;
+  const unit = course && unitId ? course.units[unitId] : undefined;
   return (
     <div>
       <div>
         <Link to="/">Home</Link>
       </div>
-      <h2>{course.name}</h2>
-      <div>{renderUnitList(course)}</div>
-      <div>{renderUnit(unit as UnitType)}</div>
+      <h2>{course ? course.name : ''}</h2>
+      <div>{renderUnitList(course as any)}</div>
+      <div>{renderUnit(unit as any)}</div>
       {<Outlet />}
     </div>
   );

@@ -281,4 +281,9 @@ export const vocab = [
   },
 ];
 
-export default { name: 'Lesson 1', id: 'lesson1', vocab };
+export default {
+  name: 'Lesson 1',
+  id: 'lesson1',
+  vocab,
+  headers: { kana: 'Kana', meaning: 'Meaning', kanji: 'Kanji' },
+};

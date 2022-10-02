@@ -137,4 +137,9 @@ export const vocab = [
   },
 ];
 
-export default { name: 'Unit 1', id: 'unit1', vocab };
+export default {
+  name: 'Unit 1',
+  id: 'unit1',
+  vocab,
+  headers: { kana: 'Kana', meaning: 'Meaning' },
+};

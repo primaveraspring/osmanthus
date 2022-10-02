@@ -11,5 +11,5 @@ export type CourseKeyType = keyof {
 export type CourseType = {
   id: string;
   name: string;
-  units: { [unitId: string]: UnitType };
+  units: { [unitId in CourseKeyType]: UnitType };
 };
