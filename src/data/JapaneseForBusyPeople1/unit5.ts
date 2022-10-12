@@ -44,7 +44,7 @@ export const vocab = [
     meaning: 'Golf',
   },
   {
-    kana: 'でございます\n(でございます)',
+    kana: 'でございます',
     meaning: 'extremely polite form of です(desu)',
   },
   {
