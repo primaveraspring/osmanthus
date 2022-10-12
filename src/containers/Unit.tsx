@@ -1,11 +1,13 @@
-import { UnitType } from '../data/types/Units';
 import { Table } from 'baseui/table-semantic';
+import { useUnit } from './Course';
 
-type UnitProps = {
-  unit: UnitType;
-};
+function Unit() {
+  const { unit } = useUnit();
 
-function Unit({ unit }: UnitProps) {
+  if (!unit) {
+    return null;
+  }
+
   const headers = unit.headers;
   const data = unit.vocab.map((v) => Object.values(v));
 

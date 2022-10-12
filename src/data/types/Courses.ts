@@ -8,8 +8,10 @@ export type CourseKeyType = keyof {
   [GENKI_1]: string;
 };
 
+export type UnitsForCourseType = { string: UnitType };
+
 export type CourseType = {
   id: CourseKeyType;
   name: string;
-  units: { string: UnitType };
+  units: UnitsForCourseType;
 };

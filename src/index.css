@@ -92,5 +92,10 @@ button:focus-visible {
 }
 
 .not-sidebar table th {
-  text-align: center
+  text-align: center;
+}
+
+.practice-select  .bu.bv.bw{
+  margin: 0 auto;
+  display: block;
 }
