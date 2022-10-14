@@ -71,7 +71,7 @@ function Quiz({
       >
         {'Next'}
       </Button>
-      <div style={{ 'margin-top': '25px' }}>{returnToSettings()}</div>
+      <div>{returnToSettings()}</div>
     </div>
   );
 }
