@@ -51,8 +51,16 @@ function Practice() {
     const unitsToUse: UnitType[] = Object.values(course.units).filter(
       (_unit, index) => selectedUnits.indexOf(index) >= 0
     );
+
     if (mode === QUIZ) {
-      currentView = () => Quiz(returnToSettings, unitsToUse);
+      let allVocab: Array<any> = [];
+      unitsToUse.forEach((unit) => {
+        allVocab.push(unit.vocab);
+      });
+      allVocab = allVocab.flat().sort(() => (Math.random() > 0.5 ? 1 : -1));
+      currentView = () => (
+        <Quiz returnToSettings={returnToSettings} vocab={allVocab} />
+      );
     } else if (mode === SLIDESHOW) {
       currentView = () => Slideshow(returnToSettings, unitsToUse);
     }
