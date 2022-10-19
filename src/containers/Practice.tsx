@@ -54,17 +54,21 @@ function Practice() {
       (_unit, index) => selectedUnits.indexOf(index) >= 0
     );
 
-    if (mode === QUIZ) {
-      let allVocab: Array<any> = [];
+    let allVocab: Array<any> = [];
+    if (mode !== SETUP) {
       unitsToUse.forEach((unit) => {
         allVocab.push(unit.vocab);
       });
       allVocab = allVocab.flat().sort(() => (Math.random() > 0.5 ? 1 : -1));
+    }
+    if (mode === QUIZ) {
       currentView = () => (
         <Quiz returnToSettings={returnToSettings} vocab={allVocab} />
       );
     } else if (mode === SLIDESHOW) {
-      currentView = () => Slideshow(returnToSettings, unitsToUse);
+      currentView = () => (
+        <Slideshow returnToSettings={returnToSettings} vocab={allVocab} />
+      );
     }
   }
 
