@@ -4,8 +4,8 @@ import { useCourse } from './Course';
 import PracticeSetup from '../components/PracticeSetup';
 import Quiz from '../components/Quiz';
 import Slideshow from '../components/Slideshow';
-import { Button, SIZE } from 'baseui/button';
 import { UnitType } from '../data/types/Units';
+import ReturnToSettings from '../components/ReturnToSettings';
 
 export const SETUP = 'SETUP';
 export const QUIZ = 'QUIZ';
@@ -18,11 +18,7 @@ export type ModeType = keyof {
 };
 
 function renderChangeSettingsButton(setIsActive: Function) {
-  return (
-    <Button size={SIZE.compact} onClick={() => setIsActive(false)}>
-      {'Change settings'}
-    </Button>
-  );
+  return <ReturnToSettings setIsActive={setIsActive} />;
 }
 
 function Practice() {
