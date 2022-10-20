@@ -45,7 +45,7 @@ function Quiz({
 
   return (
     <div>
-      <Block minHeight="300px">
+      <Block minHeight="250px">
         <Block minHeight="200px">
           <div>{current.kana}</div>
           <Block maxWidth="300px" margin="0 auto" paddingTop="25px">
@@ -89,7 +89,7 @@ function Quiz({
           </Button>
         </Block>
       </Block>
-      <Block paddingTop="25px">{returnToSettings()}</Block>
+      {returnToSettings()}
     </div>
   );
 }
