@@ -85,10 +85,3 @@ div.not-sidebar {
   .sidebar a {float: left;}
   div.not-sidebar {margin-left: 0;}
 }
-
-@media screen and (max-width: 400px) {
-  .sidebar a {
-    text-align: center;
-    float: none;
-  }
-}
