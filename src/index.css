@@ -35,26 +35,6 @@ h1 {
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid #1832dd;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color:#1832dd
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -68,25 +48,6 @@ button:focus-visible {
   }
 }
 
-.with-sidebar {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.sidebar {
-  flex-basis: 20rem;
-  flex-grow: 1;
-  min-inline-size: 200px;
-  max-inline-size: 200px;
-  padding: 20px
-}
-
-.not-sidebar {
-  flex-basis: 0;
-  flex-grow: 999;
-  text-align: center;
-}
-
 .not-sidebar table {
   margin: 0 auto;
 }
@@ -98,4 +59,36 @@ button:focus-visible {
 .practice-select  .bu.bv.bw{
   margin: 0 auto;
   display: block;
+}
+
+/* The side navigation menu */
+.sidebar {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+}
+
+div.not-sidebar {
+  margin-left: 200px;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.not-sidebar {margin-left: 0;}
+}
+
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
 }
