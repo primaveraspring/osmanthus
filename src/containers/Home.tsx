@@ -20,7 +20,7 @@ function Home() {
   return (
     <div className="home">
       <h1>金木犀</h1>
-      <h4>Select a Course</h4>
+      <h4>コースを選んで下さい</h4>
       <div>{renderCourseLinks()}</div>
     </div>
   );
